@@ -3,13 +3,11 @@ main {
 }
 
 main > div {
-    /* margin: 1rem; */
     padding: 1rem;
 }
 
 form {
     border: 1px solid black;
-    /* justify-content: center; */
     align-items: center;
     justify-content: center;
 }
@@ -17,7 +15,6 @@ form {
 input, button {
     display:flex;
     margin: 1rem;
-    /* width: auto;     */
     flex: 1;
 }
 
@@ -58,15 +55,4 @@ input, button {
     height:10px;
     width: 10px;
     border: solid 1px black;
-    /* flex: 1; */
-    /* padding 0; */
-    
 }
-/* 
-@media colorBoard and (max-width: 600px) {
-    th {
-        width: 100%;
-        display: block;
-        margin: 10px 0px;
-    }
-} */

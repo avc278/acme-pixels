@@ -8,12 +8,6 @@ for (let i = 0; i < hex.length; i++) {
   }
 }
 
-
-// const div = document.querySelector('div');
-// div.addEventListener('click', (ev) => {
-//     ev.target.style.backgroundColor = '#ffffff';
-//     ev.target.style.borderWidth = '1px';
-// });
 const button = document.getElementById('create')
 button.addEventListener('click', function renderGrid(ev) {
     ev.preventDefault()
