@@ -21,7 +21,7 @@ input, button {
     flex: 1;
 }
 
-.selected {
+#colorBoard > div.selected {
     border-color: white;
 }
 
