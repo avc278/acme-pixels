@@ -22,13 +22,14 @@ input, button {
     border-color: white;
 }
 
-#board {
-    border: 1px solid black;
-}
-
 .cell {
     border: 1px solid black;
-    height: 1rem;
+    flex: 1;
+    width: 10px;
+    height: 10px;
+    display:flex;
+    flex-wrap: wrap;
+
 }
 
 .controlsWindow {
@@ -44,6 +45,12 @@ input, button {
 .gridWindow {
     border: 1px solid black;
     flex: 2;
+    display: flex;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #colorBoard {

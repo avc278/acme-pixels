@@ -13,21 +13,17 @@ button.addEventListener('click', function renderGrid(ev) {
     ev.preventDefault()
     let rows = document.getElementById('height').value;
     let columns = document.getElementById('width').value;
-    
-    let board = []
-    while (rows > 0) {
-        let newRow = [];
-        let i = columns;
-        while (i > 0) {
-          newRow.push(`<div class='cell'></div>`);
-          i--;
+
+    const board = [];
+    for (let r=0; r<rows; r++) {
+        for (let c=0; c<columns; c++) {
+            board.push(`<div class='cell'></div>`);
         }
-        board.push(newRow);
-        rows--;
-      }
+        board.push(`<br>`)
+    }
     const html = board.map(cell => {
         return `${cell}`
-    }).join('')
+    }).join('');
     document.getElementById('board').innerHTML = html;
 })
 
@@ -57,6 +53,3 @@ function renderColorGrid() {
 
 }
 renderColorGrid();
-
-//TODO:
-// button => renderGrid
