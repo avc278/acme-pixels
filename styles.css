@@ -21,9 +21,27 @@ input, button {
     flex: 1;
 }
 
+.selected {
+    border-color: white;
+}
+
+#board {
+    border: 1px solid black;
+}
+
+.cell {
+    border: 1px solid black;
+    height: 1rem;
+}
+
 .controlsWindow {
     border: 1px solid black;
     flex:1;
+    padding: 1rem;
+}
+
+.controlsWindow > div {
+    margin: 1rem;
 }
 
 .gridWindow {
@@ -31,10 +49,24 @@ input, button {
     flex: 2;
 }
 
-
-/* div {
-    height:100px;
-    width: 100px;
-    background-color: black;
-    border: 1px solid black;
+#colorBoard {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+#colorBoard > div {
+    height:10px;
+    width: 10px;
+    border: solid 1px black;
+    /* flex: 1; */
+    /* padding 0; */
+    
+}
+/* 
+@media colorBoard and (max-width: 600px) {
+    th {
+        width: 100%;
+        display: block;
+        margin: 10px 0px;
+    }
 } */

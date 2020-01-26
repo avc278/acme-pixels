@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src='app.js'></script> 
+        <script src='app.js' defer></script> 
         <link rel='stylesheet' type='text/css' href='styles.css'>
     </head>
     <body>
@@ -10,21 +10,21 @@
         <main>
             <div class='controlsWindow'>
                 <h2>Controls</h2>
-                <table id='colorBoard'>
+                <div id='colorBoard'>
                     
-                </table>
+                </div>
                 <form>
-                    <input name='height' placeholder="height">
-                    <input name='width' placeholder="width">
-                    <button>Create Grid</button>
+                    <input id='height' name='height' placeholder="height">
+                    <input id='width' name='width' placeholder="width">
+                    <button id='create'>Create Grid</button>
                 </form>
             </div>
 
             <div class='gridWindow'>
                 <h2>Grid</h2>
-                <table id='gridBoard'>
+                <div id='board'>
                     
-                </table>
+                </div>
             </div>
         </main>
     </body>

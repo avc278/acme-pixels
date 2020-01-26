@@ -1,7 +1,3 @@
-const hex = [
-    '00', '33', '66', '99', 'cc', 'ff'
-]
-
 const arrOfColors = [];
 const hex = ["00", "33", "66", "99", "cc", "ff"];
 for (let i = 0; i < hex.length; i++) {
@@ -18,43 +14,55 @@ for (let i = 0; i < hex.length; i++) {
 //     ev.target.style.backgroundColor = '#ffffff';
 //     ev.target.style.borderWidth = '1px';
 // });
+const button = document.getElementById('create')
+button.addEventListener('click', function renderGrid(ev) {
+    ev.preventDefault()
+    let rows = document.getElementById('height').value;
+    let columns = document.getElementById('width').value;
+    
+    let board = []
+    while (rows > 0) {
+        let newRow = [];
+        let i = columns;
+        while (i > 0) {
+          newRow.push(`<div class='cell'></div>`);
+          i--;
+        }
+        board.push(newRow);
+        rows--;
+      }
+    const html = board.map(cell => {
+        return `${cell}`
+    }).join('')
+    document.getElementById('board').innerHTML = html;
+})
 
-function renderGrid() {
-    // <table> element
-    const table = document.createElement("tbody");
-    // build a table row <tr>
-    for (let h = 0; h < height; h++) {
-    const tr = document.createElement("tr");
-    // build a table column <td>
-    for (let w = 0; w < width; w++) {
-        const td = document.createElement("td");
-        // We'll put the coordinates on the cell
-        // Element itself (using dataset),
-        // letting us fetch it in a click listener later.
-        td.dataset.row = h;
-        td.dataset.col = w;
-        tds.push(td);
-        tr.append(td);
-    }
-    table.append(tr);
-    }
-    document.getElementById("gridBoard").append(table);
-}
+const colorBoard = document.querySelector('#colorBoard');
+colorBoard.addEventListener('click', (ev) => {
+    const current = colorBoard.querySelector('.selected');
+    current.classList.remove('selected');
+    const target = ev.target;
+    target.classList.add('selected');
+})
 
 function renderColorGrid() {
-    // <table> element
-    const table = document.createElementById("colorBoard");
-    // build a table row <tr>
-    // for (let color = 0; color < arrOfColors.length; color++) {
-    //     // document.append(table);
-        
-        
-    // }   
-    arrOfColors.map((color) => {
-        // document.getElementById()
-        table.append(`<div class='colorSquare' style=''></div>`)
-    });
+    const arrOfColors = [];
+    const hex = ["00", "33", "66", "99", "cc", "ff"];
+    for (let i = 0; i < hex.length; i++) {
+        for (let j = 0; j < hex.length; j++) {
+            for (let k = 0; k < hex.length; k++) {
+                arrOfColors.push(`<div style='background-color:#${hex[i]}${hex[j]}${hex[k]}'></div>`);
+            }
+        }
+    }   
+    const html = arrOfColors.map(color => {
+        return `${color}`
+    }).join('')
+    document.getElementById('colorBoard').innerHTML = html
+    document.getElementById('colorBoard').children[0].classList.add('selected');
+
 }
+renderColorGrid();
 
 //TODO:
 // button => renderGrid
