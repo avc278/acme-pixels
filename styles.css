@@ -1,6 +1,40 @@
-div {
+main {
+    display: flex;
+}
+
+main > div {
+    /* margin: 1rem; */
+    padding: 1rem;
+}
+
+form {
+    border: 1px solid black;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: center;
+}
+
+input, button {
+    display:flex;
+    margin: 1rem;
+    /* width: auto;     */
+    flex: 1;
+}
+
+.controlsWindow {
+    border: 1px solid black;
+    flex:1;
+}
+
+.gridWindow {
+    border: 1px solid black;
+    flex: 2;
+}
+
+
+/* div {
     height:100px;
     width: 100px;
     background-color: black;
     border: 1px solid black;
-}
+} */
